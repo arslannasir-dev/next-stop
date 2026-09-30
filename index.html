@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Special Invitation ✨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <audio id="bgMusic" loop src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-112189.mp3"></audio>
+  <button class="music-btn" onclick="toggleMusic()">🎵 Music On/Off</button>
+
+  <div class="card">
+    
+    <!-- STEP 1: Date Request -->
+    <div id="step1" class="step-section active">
+      <h1>Rahii Will you go on a date with me? 🌹</h1>
+      <p>Sunday, August 16, 2026</p>
+      <div class="btn-container">
+        <button id="yesBtn" class="btn-primary">Yes!</button>
+        <button id="noBtn" class="btn-secondary">No</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Activity Preference -->
+    <div id="step2" class="step-section">
+      <h1 class="wonderful-title">Wonderful! ✨</h1>
+      <p class="thank-you-text">Thank you for making my day by saying yes. ❤️</p>
+      <div class="romantic-divider">
+        <span>♡</span>
+      </div>
+      <p class="activity-question">
+        I was wondering... if you have a little extra time, maybe we could make this evening even more special with an activity?
+      </p>
+      <button class="btn-primary activity-btn" onclick="handleActivityChoice('Yes')">✨ I'd love to spend more time together</button>
+      <button class="btn-secondary activity-btn" onclick="handleActivityChoice('No')">❤️ Dinner is perfect already</button>
+    </div>
+
+    <!-- STEP 3: Activity Picker -->
+    <div id="step3" class="step-section">
+      <h1>Pick Our Pre-Dinner Plan 🎯</h1>
+      <p>Choose what sounds best for us:</p>
+      <button class="btn-option" onclick="submitFinalChoice('Shopping')">🛍️ Shopping</button>
+      <button class="btn-option" onclick="submitFinalChoice('Bowling')">🎳 Bowling</button>
+      <button class="btn-option" onclick="submitFinalChoice('Padel')">🎾 Padel</button>
+      <button class="btn-option" onclick="submitFinalChoice('Movie')">🎬 Movie</button>
+    </div>
+
+    <!-- STEP 4: Final Itinerary -->
+    <div id="step4" class="step-section">
+      <h1 class="title-script">Our Evening ✨</h1>
+      <div class="date-badge">🗓️ Date: Sunday, 16 August 2026</div>
+
+      <div class="itinerary-list">
+        <div class="itinerary-card">
+          <div class="card-header">
+            <span class="card-title">1. Dinner Together <span class="time">(7:00 PM)</span></span>
+            <span class="card-icon">🧭</span>
+          </div>
+          <div class="venue-name">Observatory, Lahore</div>
+          <div class="card-desc">Our table is waiting for us. ❤️</div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="card-header">
+            <span class="card-title">2. Something Sweet <span class="time">(9:00 PM)</span></span>
+            <span class="card-icon">☕</span>
+          </div>
+          <div class="venue-name">Butlers Chocolate Café</div>
+          <div class="card-desc">Coffee, chocolate, and a little more time together.</div>
+        </div>
+
+        <div class="itinerary-card" id="activityCard">
+          <div class="card-header">
+            <span class="card-title">3. Our Little Adventure</span>
+            <span class="card-icon">✨</span>
+          </div>
+          <div class="venue-name" id="selectedActivityText">Shopping</div>
+          <div class="card-desc">Your choice for our little adventure. ❤️</div>
+        </div>
+      </div>
+
+      <div class="special-request">
+        <span class="special-request-label">✨ One little request</span>
+        <p>I'd love it if you wore that stunning <strong>black dress</strong> for our evening. ❤️</p>
+      </div>
+
+      <div class="final-message">
+        Everything's planned.<br>All that's left is us. ✨
+      </div>
+
+      <button class="btn-confirm" onclick="sendConfirmation()">Make It Official ❤️</button>
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+  <script src="email.js"></script>
+</body>
+</html>
