@@ -1,16 +1,19 @@
+// Initialize EmailJS with your Public Key
 (function () {
-  emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS Public Key
+  emailjs.init("Y-vNDQiFDAVgyECf9"); // Replace with your EmailJS Public Key
 })();
 
 function sendConfirmation() {
-  const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";   // Replace with your Service ID
-  const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Replace with your Template ID
+  const EMAILJS_SERVICE_ID = "service_pucmikh";   // Replace with your Service ID
+  const EMAILJS_TEMPLATE_ID = "template_gq5m4g5"; // Replace with your Template ID
 
+  // List of emails to notify
   const recipientEmails = [
-    "your_email@gmail.com",
-    "her_email@gmail.com"
+    "arslannasir387@gmail.com",
+    "rahatmaqsood75@gmail.com"
   ];
 
+  // Send an email to each address
   const sendPromises = recipientEmails.map(email => {
     return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
       to_email: email,
