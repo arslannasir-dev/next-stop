@@ -12,8 +12,8 @@ body {
   align-items: center;
   min-height: 100vh;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  background: linear-gradient(rgba(10, 15, 26, 0.75), rgba(10, 15, 26, 0.85)), url('background.jpg') no-repeat center center/cover;
-  color: #e2e8f0;
+  background: linear-gradient(rgba(250, 243, 232, 0.60), rgba(234, 222, 205, 0.72)), url('background.jpg') no-repeat center center / cover, #eadecd;
+  color: #49382c;
   padding: 20px;
 }
 
@@ -38,7 +38,7 @@ body {
 }
 
 .card {
-  background: rgba(22, 30, 46, 0.85);
+  background: rgba(255, 250, 242, 0.96);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(212, 175, 55, 0.25);
@@ -46,21 +46,21 @@ body {
   padding: 35px 25px;
   max-width: 460px;
   width: 100%;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px rgba(212, 175, 55, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(120, 87, 55, 0.15), 0 0 30px rgba(212, 175, 55, 0.1);
   text-align: center;
 }
 
 h1 {
   font-size: 1.8rem;
   margin-bottom: 12px;
-  color: #f7e7ad;
+  color: #65462f;
 }
 
 p {
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 20px;
-  color: #cbd5e1;
+  color: #75614f;
 }
 
 .btn-container {
@@ -82,20 +82,20 @@ button {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #e6a119 0%, #c4820a 100%);
+  background: linear-gradient(135deg, #916b49 0%, #725037 100%);
   color: white;
   box-shadow: 0 4px 15px rgba(230, 161, 25, 0.3);
 }
 
 .btn-secondary {
-  background: #334155;
+  background: #e4d3bd;
   color: white;
 }
 
 .btn-option {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(212, 175, 55, 0.3);
-  color: #ffffff;
+  color: #49382c;
   width: 100%;
   margin-bottom: 12px;
   padding: 14px;
@@ -110,9 +110,9 @@ button {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: rgba(10, 15, 26, 0.8);
+  background: #faf3e8;
   border: 1px solid rgba(212, 175, 55, 0.3);
-  color: #f7e7ad;
+  color: #65462f;
   padding: 8px 15px;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -124,7 +124,7 @@ button {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: 2.4rem;
-  background: linear-gradient(135deg, #f7e7ad 0%, #d4af37 100%);
+  background: linear-gradient(135deg, #65462f 0%, #b28d66 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 6px;
@@ -132,7 +132,7 @@ button {
 
 .date-badge {
   font-size: 0.9rem;
-  color: #cbd5e1;
+  color: #75614f;
   font-weight: 500;
   margin-bottom: 24px;
   letter-spacing: 0.5px;
@@ -147,9 +147,9 @@ button {
 }
 
 .itinerary-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-left: 3px solid #d4af37;
+  background: #f5ecdf;
+  border: 1px solid #e6d7c3;
+  border-left: 3px solid #b28d66;
   border-radius: 14px;
   padding: 16px;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -171,7 +171,7 @@ button {
 .card-title {
   font-size: 1.05rem;
   font-weight: 600;
-  color: #f7e7ad;
+  color: #65462f;
 }
 
 .card-icon {
@@ -182,14 +182,14 @@ button {
 .venue-name {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #49382c;
   margin-top: 5px;
   margin-bottom: 4px;
 }
 
 .card-desc {
   font-size: 0.85rem;
-  color: #9faabc;
+  color: #75614f;
   line-height: 1.45;
   margin-top: 4px;
 }
@@ -208,7 +208,7 @@ button {
   margin-bottom: 18px;
   font-size: 17px;
   line-height: 1.6;
-  color: #f3d98b;
+  color: #805a3b;
 }
 
 .activity-question {
@@ -216,7 +216,7 @@ button {
   margin: 18px auto 24px;
   font-size: 16px;
   line-height: 1.65;
-  color: #d8deea;
+  color: #75614f;
 }
 
 .romantic-divider {
@@ -226,7 +226,7 @@ button {
   margin: 15px auto;
   width: 70%;
   max-width: 300px;
-  color: #e5a008;
+  color: #946e48;
 }
 
 .romantic-divider::before,
@@ -279,13 +279,13 @@ button {
   font-family: Georgia, serif;
   font-style: italic;
   font-weight: 700;
-  color: #f4d77b;
+  color: #805a3b;
 }
 
 .special-request p {
   margin: 0;
   line-height: 1.55;
-  color: #e7eaf0;
+  color: #75614f;
 }
 
 .final-message {
@@ -295,7 +295,7 @@ button {
   font-style: italic;
   font-size: 16px;
   line-height: 1.6;
-  color: #c8cfdb;
+  color: #75614f;
 }
 
 .btn-confirm {
@@ -303,8 +303,8 @@ button {
   padding: 16px;
   border: none;
   border-radius: 50px;
-  background: linear-gradient(135deg, #e6a119 0%, #c4820a 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #916b49 0%, #725037 100%);
+  color: #49382c;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -320,4 +320,50 @@ button {
 
 .btn-confirm:active {
   transform: translateY(0) scale(0.98);
+}
+
+.planner-intro { font-size: 0.9rem; line-height: 1.7; }
+.planner-list { gap: 22px; }
+.planner-list .itinerary-card { background: linear-gradient(135deg, #fffaf2, #f2e6d6); padding: 20px; border-left-width: 1px; border-top: 3px solid #b28d66; }
+.planner-list .itinerary-card:hover { transform: none; box-shadow: none; }
+.planner-list .card-desc { margin-bottom: 18px; }
+.plan-fields { display: grid; gap: 14px; }
+.plan-fields label { display: grid; gap: 7px; font-size: 0.8rem; font-weight: 600; color: #65462f; }
+.plan-fields input { width: 100%; min-width: 0; min-height: 46px; padding: 11px 12px; font: inherit; font-size: 0.9rem; font-weight: 400; color: #49382c; background: #fffdf8; border: 1px solid #cbb69d; border-radius: 10px; color-scheme: light; }
+.plan-fields input::placeholder { color: #85715e; opacity: 1; }
+.plan-fields input:focus-visible, .outfit-option input:focus-visible { outline: 2px solid #805a3b; outline-offset: 3px; }
+.outfit-choice { min-width: 0; margin-top: 30px; padding: 18px; border: 1px solid #c7d2de; border-radius: 16px; background: #f0f3f6; text-align: left; }
+.outfit-choice legend { padding: 0 8px; font: italic 1.2rem 'Playfair Display', serif; color: #455e78; }
+.outfit-choice p { font-size: 0.9rem; color: #526477; }
+.outfit-option { display: flex; align-items: center; gap: 10px; min-height: 48px; margin-top: 10px; padding: 12px; border: 1px solid #cbd4dd; border-radius: 10px; background: #fff; font-size: 0.85rem; cursor: pointer; color: #455e78; }
+.outfit-option:has(input:checked) { border-color: #526f91; background: #e4edf7; }
+.outfit-option input { accent-color: #526f91; flex-shrink: 0; width: 17px; height: 17px; }
+.confirmation-status { margin: 14px 0 0; font-size: 0.85rem; }
+.confirmation-status:empty { display: none; }
+.btn-confirm:disabled { opacity: 0.7; cursor: wait; }
+
+/* Warm neutrals for our October date. */
+body { padding: 80px 20px 32px; min-height: 100svh; color-scheme: light; }
+h1 { font-family: 'Playfair Display', serif; line-height: 1.3; }
+button { font-family: inherit; max-width: 100%; }
+button:focus-visible { outline: 3px solid #805a3b; outline-offset: 4px; }
+.btn-primary, .btn-confirm { color: #fffaf2; box-shadow: 0 6px 18px #78573726; }
+.btn-primary:hover, .btn-confirm:hover { box-shadow: 0 9px 24px #78573738; }
+.btn-secondary { color: #49382c; }
+.card { border-color: #fffaf2; box-shadow: 0 24px 65px #78573724, inset 0 0 0 6px #f3e9db; }
+.eyebrow { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: #805a3b; }
+.romantic-divider::before, .romantic-divider::after { background: #d9c6ae; }
+.special-request { background: #eee0ce66; border-color: #bea17e; }
+.music-btn { min-height: 44px; border-color: #d9c6ae; }
+.card-header { gap: 10px; }
+.time { white-space: nowrap; }
+.btn-back { display: block; margin: -8px 0 20px; padding: 8px 12px; min-height: 44px; background: transparent; color: #75614f; font-size: 0.85rem; }
+.btn-back:hover { background: #eee0ce; color: #49382c; }
+@media (max-width: 380px) {
+  body { padding-inline: 12px; }
+  .card { padding: 28px 20px; }
+  .card-header { align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
