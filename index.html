@@ -8,15 +8,16 @@
 </head>
 <body>
 
-  <audio id="bgMusic" loop src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-piano-112189.mp3"></audio>
-  <button class="music-btn" onclick="toggleMusic()">🎵 Music On/Off</button>
+  <audio id="bgMusic" loop preload="none" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a2b168.mp3"></audio>
+  <button id="musicBtn" class="music-btn" onclick="toggleMusic()" aria-pressed="false" aria-label="Background music" aria-live="polite">🎵 Play music</button>
 
   <div class="card">
     
     <!-- STEP 1: Date Request -->
     <div id="step1" class="step-section active">
-      <h1>Rahii Will you go on a date with me? 🌹</h1>
-      <p>Sunday, August 16, 2026</p>
+      <p class="eyebrow">A little adventure. A date with you.</p>
+      <h1>Rahii, another date with me? 🤎</h1>
+      <p>Sunday, October 11, 2026</p>
       <div class="btn-container">
         <button id="yesBtn" class="btn-primary">Yes!</button>
         <button id="noBtn" class="btn-secondary">No</button>
@@ -25,72 +26,91 @@
 
     <!-- STEP 2: Activity Preference -->
     <div id="step2" class="step-section">
+      <button class="btn-back" onclick="goToStep('step1')">← Back</button>
       <h1 class="wonderful-title">Wonderful! ✨</h1>
       <p class="thank-you-text">Thank you for making my day by saying yes. ❤️</p>
       <div class="romantic-divider">
         <span>♡</span>
       </div>
       <p class="activity-question">
-        I was wondering... if you have a little extra time, maybe we could make this evening even more special with an activity?
+        Let's start our Sunday with breakfast together, head to the shooting range for a little friendly competition, then spend some time shopping before ending the day with a dinner date. From our first bite to our last goodnight, my favourite part will be being with you. 🤎
       </p>
-      <button class="btn-primary activity-btn" onclick="handleActivityChoice('Yes')">✨ I'd love to spend more time together</button>
-      <button class="btn-secondary activity-btn" onclick="handleActivityChoice('No')">❤️ Dinner is perfect already</button>
-    </div>
-
-    <!-- STEP 3: Activity Picker -->
-    <div id="step3" class="step-section">
-      <h1>Pick Our Pre-Dinner Plan 🎯</h1>
-      <p>Choose what sounds best for us:</p>
-      <button class="btn-option" onclick="submitFinalChoice('Shopping')">🛍️ Shopping</button>
-      <button class="btn-option" onclick="submitFinalChoice('Bowling')">🎳 Bowling</button>
-      <button class="btn-option" onclick="submitFinalChoice('Padel')">🎾 Padel</button>
-      <button class="btn-option" onclick="submitFinalChoice('Movie')">🎬 Movie</button>
+      <button class="btn-primary activity-btn" onclick="goToStep('step4')">Let's plan our day 🤎</button>
     </div>
 
     <!-- STEP 4: Final Itinerary -->
     <div id="step4" class="step-section">
-      <h1 class="title-script">Our Evening ✨</h1>
-      <div class="date-badge">🗓️ Date: Sunday, 16 August 2026</div>
+      <button class="btn-back" onclick="goToStep('step2')">← Back</button>
+      <p class="eyebrow">You pick the details. I'll bring the company.</p>
+      <h1 class="title-script">A Sunday, Our Way ✨</h1>
+      <div class="date-badge">🗓️ Sunday, October 11, 2026</div>
+      <p class="planner-intro">Where shall we go, and when? Make this little day ours, one stop at a time. Leave anything open and we'll decide together. 🤎</p>
 
-      <div class="itinerary-list">
+      <form id="datePlanner" onsubmit="event.preventDefault(); sendConfirmation();">
+      <div class="itinerary-list planner-list">
         <div class="itinerary-card">
           <div class="card-header">
-            <span class="card-title">1. Dinner Together <span class="time">(7:00 PM)</span></span>
-            <span class="card-icon">🧭</span>
+            <span class="card-title">1. Breakfast Together</span>
+            <span class="card-icon">🥐</span>
           </div>
-          <div class="venue-name">Observatory, Lahore</div>
-          <div class="card-desc">Our table is waiting for us. ❤️</div>
-        </div>
-
-        <div class="itinerary-card">
-          <div class="card-header">
-            <span class="card-title">2. Something Sweet <span class="time">(9:00 PM)</span></span>
-            <span class="card-icon">☕</span>
+          <p class="card-desc">Our first stop, and my favourite way to start the day with you.</p>
+          <div class="plan-fields">
+            <label for="breakfastTime">When shall we meet?<input id="breakfastTime" name="breakfastTime" type="time"></label>
+            <label for="breakfastPlace">Where for breakfast?<input id="breakfastPlace" name="breakfastPlace" type="text" maxlength="160" placeholder="A café you've been wanting to try…"></label>
           </div>
-          <div class="venue-name">Butlers Chocolate Café</div>
-          <div class="card-desc">Coffee, chocolate, and a little more time together.</div>
         </div>
-
         <div class="itinerary-card" id="activityCard">
           <div class="card-header">
-            <span class="card-title">3. Our Little Adventure</span>
-            <span class="card-icon">✨</span>
+            <span class="card-title">2. A Little Adventure</span>
+            <span class="card-icon">🎯</span>
           </div>
-          <div class="venue-name" id="selectedActivityText">Shopping</div>
-          <div class="card-desc">Your choice for our little adventure. ❤️</div>
+          <p class="card-desc">Next, the shooting range. A little friendly competition?</p>
+          <div class="plan-fields">
+            <label for="shootingTime">When shall we go?<input id="shootingTime" name="shootingTime" type="time"></label>
+            <label for="shootingPlace">Which shooting range?<input id="shootingPlace" name="shootingPlace" type="text" maxlength="160" placeholder="Pick a range, or we'll choose together"></label>
+          </div>
         </div>
+        <div class="itinerary-card">
+          <div class="card-header">
+            <span class="card-title">3. Shopping Together</span>
+            <span class="card-icon">🛍️</span>
+          </div>
+          <p class="card-desc">A little browsing, picking favourites, and walking beside you.</p>
+          <div class="plan-fields">
+            <label for="shoppingTime">What time works for you?<input id="shoppingTime" name="shoppingTime" type="time"></label>
+            <label for="shoppingPlace">Where shall we shop?<input id="shoppingPlace" name="shoppingPlace" type="text" maxlength="160" placeholder="Your favourite mall, market, or store…"></label>
+          </div>
+        </div>
+
+        <div class="itinerary-card">
+          <div class="card-header">
+            <span class="card-title">4. Our Dinner Date</span>
+            <span class="card-icon">🤎</span>
+          </div>
+          <p class="card-desc">To end our day: good food, a little romance, and you across the table.</p>
+          <div class="plan-fields">
+            <label for="dinnerTime">When's our dinner date?<input id="dinnerTime" name="dinnerTime" type="time"></label>
+            <label for="dinnerPlace">Where would you love to go?<input id="dinnerPlace" name="dinnerPlace" type="text" maxlength="160" placeholder="Somewhere special to end our day…"></label>
+          </div>
+        </div>
+
       </div>
 
-      <div class="special-request">
-        <span class="special-request-label">✨ One little request</span>
-        <p>I'd love it if you wore that stunning <strong>black dress</strong> for our evening. ❤️</p>
-      </div>
+      <fieldset class="outfit-choice">
+        <legend>A little outfit change? ✨</legend>
+        <p>Beige for our daytime adventures… would you like to change into a <strong>blue dress for dinner</strong>?</p>
+        <label class="outfit-option"><input type="radio" name="dinnerOutfit" value="Blue dress for dinner"><span>💙 Yes, a blue dress for dinner</span></label>
+        <label class="outfit-option"><input type="radio" name="dinnerOutfit" value="Keep beige for dinner"><span>🤎 Let's keep it beige</span></label>
+        <label class="outfit-option"><input type="radio" name="dinnerOutfit" value="Decide the dinner outfit later" checked><span>✨ I'll decide closer to the day</span></label>
+      </fieldset>
 
       <div class="final-message">
-        Everything's planned.<br>All that's left is us. ✨
+        A little adventure. A little romance.<br>A whole Sunday to look forward to. 🤎
       </div>
 
-      <button class="btn-confirm" onclick="sendConfirmation()">Make It Official ❤️</button>
+      <button id="confirmBtn" class="btn-confirm" type="submit">Send Our Little Plan 🤎</button>
+      <p id="confirmationStatus" class="confirmation-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
 
   </div>
